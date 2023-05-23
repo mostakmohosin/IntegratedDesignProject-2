@@ -4,24 +4,24 @@ import './App.css';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Dashboard from './pages/Dashboard'
-import ListUser from './pages/user/ListUser';
-import DonorList from './pages/Donor/DonorList';
+import User from './pages/user/User';
+import Donor from './pages/Donor/Donor';
 import Reports from './pages/Reports';
-import ListPeople from './pages/people/ListPeople';
+import People from './pages/people/People';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Router>
       <Header />
       <div className="main-container">
         <Sidebar />
         
         <Routes>
-        <Route path='/admin' element={<Dashboard />} />
-        <Route path='/user' element={<ListUser />}/>
-        <Route path='/donor' element={<DonorList />}/>
-        <Route path='/people' element={<ListPeople />}/>
+        <Route path='/' element={<Dashboard />} />
+        <Route path='/user' element={<User />}/>
+        <Route path='/donor' element={<Donor />}/>
+        <Route path='/people' element={<People />}/>
         <Route path='/reports' element={<Reports />}/>
       </Routes>
       </div>

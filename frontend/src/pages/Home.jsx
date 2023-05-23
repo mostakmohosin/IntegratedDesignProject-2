@@ -21,7 +21,7 @@ function Home() {
         <p>“Never get tired of doing little things for others. Sometimes, those little things occupy the biggest part of their hearts.”</p>
         <div className="btn">
             <Link to={"/donate"}>
-                <button className="blue">Donate Now</button>
+                <button className="blue"><Link to="/payment">Donate Now</Link></button>
             </Link>
             
         </div>

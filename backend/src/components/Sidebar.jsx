@@ -5,10 +5,10 @@ function Sidebar() {
     return (
       <aside className="sidebar">
         <ul>
-          <li><Link to="/admin">Dashboard</Link></li>
+          <li><Link to="/">Dashboard</Link></li>
           <li><Link to="/user">Users</Link></li>
-          <li><Link to="/donor">Donor</Link></li>
           <li><Link to="/people">People</Link></li>
+          <li><Link to="/donor">Donor</Link></li>   
           <li><Link to="/reports">Reports</Link></li>
         </ul>
       </aside>
