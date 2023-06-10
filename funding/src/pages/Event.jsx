@@ -49,6 +49,7 @@ function Event() {
 					</div>
 				</div>
 			</div>
+			<Footer />
 
 		</div>
 	)

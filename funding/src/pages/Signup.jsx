@@ -63,7 +63,7 @@ const Signup = () => {
 
                 <p className='textRead'>If You have an account? <Link to="/login">Login here</Link> </p>
                 <div class="input-box">
-                  <button type="submit">Signup</button>
+                  <button className="btnSub" type="submit">Signup</button>
 
                 </div><br />
                 <p>* By signing up, you agree to our Terms of Use and to receive our emails & updates and acknowledge you've read our Privacy Policy.</p>
@@ -78,6 +78,7 @@ const Signup = () => {
 
         </div>
       </div>
+      <Footer />
     </div>
   )
 }

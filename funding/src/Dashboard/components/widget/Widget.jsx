@@ -35,7 +35,7 @@ const Widget = ({ type }) => {
       data = {
         title: "DONORS",
         isMoney: false,
-        link: "View all orders",
+        link: "View all donors",
         icon: (
           <ShoppingCartOutlinedIcon
             className="icon"
@@ -51,7 +51,7 @@ const Widget = ({ type }) => {
       data = {
         title: "PEOPLES",
         isMoney: false,
-        link: "View net earnings",
+        link: "View all peoples",
         icon: (
           <MonetizationOnOutlinedIcon
             className="icon"

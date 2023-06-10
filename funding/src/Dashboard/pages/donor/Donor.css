@@ -12,7 +12,7 @@
 }
 
 h1 {
-  color: lightgray;
+  color: rgb(22, 15, 15);
   font-size: 20px;
 }
 
@@ -38,7 +38,7 @@ form {
 }
 
 .formInput {
-  width: 40%;
+  width: 60%;
 }
 
 label {

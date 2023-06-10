@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { AllList } from "../helpers/AllList";
+import { AllList } from "../imglist/AllList";
 import MenuItem from "../components/GalleryItem";
 import "../styles/Gallery.css";
 export default function Gallery() {
@@ -13,7 +13,7 @@ export default function Gallery() {
       </div>
 
       <div className="menu">
-        <h1 className="menuTitle">Our initiative</h1>
+        <h2 className="menuTitle">Our initiative</h2>
         <div className="menuList">
           {AllList.map((menuItem, key) => {
             return (
@@ -27,6 +27,7 @@ export default function Gallery() {
           })}
         </div>
       </div>
+      <Footer />
     </div>
   )
 }

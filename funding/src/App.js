@@ -13,56 +13,59 @@ import Payment from './pages/Payment';
 import Home1 from "./Dashboard/./pages/home/Home1";
 import List from "./Dashboard/./pages/list/List";
 import List1 from "./Dashboard/./pages/list/List1";
+import List2 from "./Dashboard/./pages/list/List2";
 import Single from "./Dashboard/./pages/single/Single";
 import New from "./Dashboard/./pages/user/user";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { productInputs, userInputs, donorInputs } from "./Dashboard/./formSource";
-import {AuthContext} from "./Dashboard/./context/AuthContext"
+import { userInputs, donorInputs, peopleInputs } from "./Dashboard/./formSource";
+import { AuthContext } from "./Dashboard/./context/AuthContext"
+import New1 from './Dashboard/pages/donor/Donor';
+import New2 from './Dashboard/pages/people/people';
 
 
 
 function App() {
-  const {currentUser} = useContext(AuthContext)
-  
-  
+  const { currentUser } = useContext(AuthContext)
 
-  const RequireAuth = ({childern}) => {
+
+
+  const RequireAuth = ({ childern }) => {
     return currentUser ? childern : <Navigate to="/login" />
   };
   console.log(currentUser)
 
   return (
     <div>
-    <div >
+      <div >
 
-      
-      <BrowserRouter>
-        
-        <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/gallery' element={<Gallery />}/>
-        <Route path='/about' element={<About />}/>
-        <Route path='/contact' element={<Contact />}/>
-        <Route path='/event' element={<Event />}/>
-        <Route path='/login' element={<Login />}/>
-        <Route path='/signup' element={<Signup />}/>
-        <Route path='/payment' element={<Payment />}/>
-      </Routes>
-      
-      </BrowserRouter>
 
-      
-      
-    </div>
-    <div>
-      <BrowserRouter>
-        <Routes>
-          
-          
+        <BrowserRouter>
 
-            <Route path="/dashboard" element={<Home1 />} />
-            
-            <Route path="users">
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/gallery' element={<Gallery />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/contact' element={<Contact />} />
+            <Route path='/event' element={<Event />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/signup' element={<Signup />} />
+            <Route path='/payment' element={<Payment />} />
+          </Routes>
+
+        </BrowserRouter>
+
+
+
+      </div>
+      <div>
+        <BrowserRouter>
+          <Routes>
+
+
+
+            <Route path="dashboard" element={<Home1 />} />
+
+            <Route path="/users">
               <Route index element={<List />} />
               <Route path=":userId" element={<Single />} />
               <Route
@@ -70,26 +73,30 @@ function App() {
                 element={<New inputs={userInputs} title="Add New User" />}
               />
             </Route>
-            <Route path="products">
-              <Route index element={<List />} />
-              <Route path=":productId" element={<Single />} />
-              <Route
-                path="new"
-                element={<New inputs={productInputs} title="Add New Product" />}
-              />
-            </Route>
-            <Route path="donor">
+
+            <Route path="/donor">
               <Route index element={<List1 />} />
               <Route path=":donorId" element={<Single />} />
               <Route
                 path="new"
-                element={<New inputs={donorInputs} title="Add New Donor" />}
+                element={<New1 inputs={donorInputs} title="Add New Donor" />}
               />
-            </Route>
+              </Route>
+
+              <Route path="/people">
+                <Route index element={<List2 />} />
+                <Route path=":peopleId" element={<Single />} />
+                <Route
+                  path="new"
+                  element={<New2 inputs={peopleInputs} title="Add New People" />}
+                />
+              </Route>
+
           
-        </Routes>
-      </BrowserRouter>
-    </div>
+
+          </Routes>
+        </BrowserRouter>
+      </div>
     </div>
   );
 }

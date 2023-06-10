@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { db } from "../../../../firebase";
 
-const Datatable1 = () => {
+const Datatable = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -48,9 +48,9 @@ const Datatable1 = () => {
       renderCell: (params) => {
         return (
           <div className="cellAction">
-            <Link to="/donor/test" style={{ textDecoration: "none" }}>
+            
               <div className="viewButton">View</div>
-            </Link>
+        
             <div
               className="deleteButton"
               onClick={() => handleDelete(params.row.id)}
@@ -82,4 +82,4 @@ const Datatable1 = () => {
   );
 };
 
-export default Datatable1;
+export default Datatable;

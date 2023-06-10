@@ -68,6 +68,7 @@ function Contact() {
             <section id="map">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d249.72602687478167!2d90.37805277876363!3d23.78721622737262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c73a2e63a88b%3A0x714fc9d2961a84ae!2sGreen%20University%20Lake!5e0!3m2!1sen!2sbd!4v1677501458578!5m2!1sen!2sbd" style={{ border: '1px solid #ccc' }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </section>
+            <Footer />
         </div>
     );
 }

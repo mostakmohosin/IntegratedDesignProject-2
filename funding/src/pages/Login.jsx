@@ -65,9 +65,9 @@ const Login = () => {
                 </div>
                 {error && <span>Wrong email and password!</span>}
 
-                <p className='textRead'>If you don't have an account? <Link to="/signup">Click here</Link> </p>
+                <p className='textRead'>If you don't have an account? Please contact with the Admin </p>
                 <div class="input-box">
-                  <button type="submit">Login</button>
+                  <button className="btnSub" type="submit">Login</button>
 
                 </div><br />
                 <p>* By signing up, you agree to our Terms of Use and to receive our emails & updates and acknowledge you've read our Privacy Policy.</p>
@@ -82,6 +82,7 @@ const Login = () => {
 
         </div>
       </div>
+      <Footer />
     </div>
   )
 }

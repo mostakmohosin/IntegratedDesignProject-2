@@ -3,7 +3,7 @@ export const userInputs = [
     id: "displayName",
     label: "Name and surname",
     type: "text",
-    placeholder: "Ender your Name",
+    placeholder: "Enter your Name",
   },
     {
       id: "username",
@@ -59,60 +59,61 @@ export const userInputs = [
     },
     {
       id: "email",
-      label: "Description",
+      label: "Email",
       type: "text",
-      placeholder: "Description",
+      placeholder: "Enter Email Address",
     },
     {
-      id: 3,
-      label: "Category",
+      id: "gender",
+      label: "Gender",
       type: "text",
-      placeholder: "Computers",
+      placeholder: "Enter your gender",
     },
     {
-      id: 4,
-      label: "Price",
+      id: "card",
+      label: "Payment Method",
       type: "text",
-      placeholder: "100",
+      placeholder: "Enter Payment Method",
     },
     {
-      id: 5,
-      label: "Stock",
+      id: "amount",
+      label: "Amount",
       type: "text",
-      placeholder: "in stock",
+      placeholder: "Enter Amount",
+    }
+  ];
+
+  export const peopleInputs = [
+    {
+      id: "Name",
+      label: "Name",
+      type: "text",
+      placeholder: "Enter FullName",
+    },
+    {
+      id: "Address",
+      label: "Address",
+      type: "text",
+      placeholder: "Enter Address",
+    },
+    {
+      id: "NID",
+      label: "NID",
+      type: "text",
+      placeholder: "Nation ID No.",
+    },
+    {
+      id: "Phone",
+      label: "Mobile",
+      type: "text",
+      placeholder: "Phone Number",
+    },
+    {
+      id: "Reason",
+      label: "Reason",
+      type: "text",
+      placeholder: "What's the reason?",
     },
   ];
   
-  export const productInputs = [
-    {
-      id: 1,
-      label: "Title",
-      type: "text",
-      placeholder: "Apple Macbook Pro",
-    },
-    {
-      id: 2,
-      label: "Description",
-      type: "text",
-      placeholder: "Description",
-    },
-    {
-      id: 3,
-      label: "Category",
-      type: "text",
-      placeholder: "Computers",
-    },
-    {
-      id: 4,
-      label: "Price",
-      type: "text",
-      placeholder: "100",
-    },
-    {
-      id: 5,
-      label: "Stock",
-      type: "text",
-      placeholder: "in stock",
-    },
-  ];
   

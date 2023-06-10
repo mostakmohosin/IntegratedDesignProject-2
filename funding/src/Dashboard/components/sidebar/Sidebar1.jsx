@@ -40,11 +40,12 @@ const Sidebar = () => {
           </li>
           </Link>
           <Link to="/people" style={{ textDecoration: "none" }}>
-            <li>
-              <StoreIcon className="icon" />
-              <span>Peoples</span>
-            </li>
+          <li>
+            <CreditCardIcon className="icon" />
+            <span>Peoples</span>
+          </li>
           </Link>
+          
           
           <li>
             <LocalShippingIcon className="icon" />

@@ -1,14 +1,13 @@
 import "./Donor.css";
-import Sidebar from "../../components/sidebar/Sidebar";
-import Navbar from "../../components/navbar/Navbar";
+import Sidebar from "../../components/sidebar/Sidebar1";
+import Navbar from "../../components/navbar/Navbar1";
 import { useState } from "react";
 import { addDoc, collection, doc, serverTimestamp, setDoc } from "firebase/firestore";
-import { auth, db } from "../../firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { db } from "../../../firebase";
 import { useNavigate } from "react-router-dom";
 
 
-const Donor = ({ inputs, title }) => {
+const New1 = ({ inputs, title }) => {
   const [data, setData] = useState({})
   const navigate = useNavigate()
 
@@ -25,12 +24,8 @@ const Donor = ({ inputs, title }) => {
     e.preventDefault();
     try{
 
-    const res = await createUserWithEmailAndPassword(
-      auth,
-      data.email,
-      data.password
-    );
-    await setDoc(doc(db, "donor", res.user.uid),{
+   
+    await setDoc(doc(db, "donor"),{
       ...data,
       timeStamp: serverTimestamp()
     });
@@ -61,7 +56,7 @@ const Donor = ({ inputs, title }) => {
                   <input id={input.id} type={input.type} placeholder={input.placeholder} onChange={handleInput} />
                 </div>
               ))}
-              <button type="submit">Send</button>
+              <button type="submit">Submit</button>
             </form>
           </div>
         </div>
@@ -70,4 +65,4 @@ const Donor = ({ inputs, title }) => {
   );
 };
 
-export default Donor;
+export default New1;

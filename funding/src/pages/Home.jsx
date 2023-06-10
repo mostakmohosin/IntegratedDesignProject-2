@@ -10,8 +10,11 @@ import trust3 from "../assets/img/3.png"
 import trust4 from "../assets/img/4.png"
 import trust5 from "../assets/img/5.png"
 import trust6 from "../assets/img/6.png"
+import edu from "../assets/img/edu.png"
+import food from "../assets/img/food.png"
+import water from "../assets/img/water.png"
 import { Link } from "react-router-dom";
-
+import Table from "../Dashboard/components/table/Table"
 import "../styles/Home.css";
 
 function Home() {
@@ -23,10 +26,9 @@ function Home() {
             <div id="home">
                 <h2>No One Should Go To Bed Hungry</h2>
                 <p>“Never get tired of doing little things for others. Sometimes, those little things occupy the biggest part of their hearts.”</p>
-                <div className="btn">
-                    <Link to={"/donate"}>
-                        <button className="blue"><Link to="/payment">Donate Now</Link></button>
-                    </Link>
+                <div className="btnhome">
+                    <Link to="/payment"><button className="blue">Donate Now</button></Link>
+                    <Link to="/people"><button className="aqua">Add People</button></Link>
 
                 </div>
             </div>
@@ -61,7 +63,7 @@ function Home() {
                 <div>
                     <div class="products">
                         <div class="product">
-                            <img src={trust1} />
+                            <img src={edu} />
                             <div class="caption">Ensure Education For Every Poor Children</div>
                             <div class="progress-bar">
                                 <div class="progress" style={{ width: '40%' }}></div>
@@ -70,14 +72,12 @@ function Home() {
                                 Raised: $19.99 - Goal: $29.99
                             </div>
                             <div className="btn">
-                                <Link to={"/donate"}>
-                                    <button className="blue">Donate</button>
-                                </Link>
+                                <Link to="/payment"><button className="blue">Donate</button></Link>
                             </div>
                         </div>
 
                         <div class="product">
-                            <img src={trust2} />
+                            <img src={food} />
                             <div class="caption">Providing Healthy Food For The Children</div>
                             <div class="progress-bar">
                                 <div class="progress" style={{ width: '20%' }}></div>
@@ -86,14 +86,12 @@ function Home() {
                                 Raised: $29.99 - Goal: $39.99
                             </div>
                             <div className="btn">
-                                <Link to={"/donate"}>
-                                    <button className="blue">Donate</button>
-                                </Link>
+                                <Link to="/payment"><button className="blue">Donate</button></Link>
                             </div>
                         </div>
 
                         <div class="product">
-                            <img src={trust3} />
+                            <img src={water} />
                             <div class="caption">Supply Drinking Water For The People</div>
                             <div class="progress-bar">
                                 <div class="progress" style={{ width: '50%' }}></div>
@@ -102,12 +100,18 @@ function Home() {
                                 Raised: $14.99 - Goal: $24.99
                             </div>
                             <div className="btn">
-                                <Link to={"/donate"}>
-                                    <button className="blue">Donate</button>
-                                </Link>
+                                <Link to="/payment"><button className="blue">Donate</button></Link>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <div id="features">
+                <h1>Last Transactions</h1>
+                <p>We Are In A Mission To Help The Helpless.</p>
+                <div className="listContainer">
+                    <Table />
                 </div>
             </div>
 
@@ -124,7 +128,6 @@ function Home() {
 
                 </div>
             </div>
-
 
             <Footer />
         </div>

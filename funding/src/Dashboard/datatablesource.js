@@ -1,17 +1,9 @@
 export const userColumns = [
   { field: "id", headerName: "ID", width: 70 },
   {
-    field: "user",
+    field: "username",
     headerName: "User",
     width: 230,
-    renderCell: (params) => {
-      return (
-        <div className="cellWithImg">
-          
-          {params.row.username}
-        </div>
-      );
-    },
   },
   {
     field: "email",
@@ -53,7 +45,7 @@ export const userColumns1 = [
 
   {
     field: "card",
-    headerName: "Card",
+    headerName: "Payment Method",
     width: 150,
   },
   {
@@ -64,3 +56,33 @@ export const userColumns1 = [
   
 ];
 
+export const userColumns2 = [
+  { field: "id", headerName: "ID", width: 70 },
+ 
+  {
+    field: "Name",
+    headerName: "Name",
+    width: 150,
+  },
+  {
+    field: "Address",
+    headerName: "Address",
+    width: 150,
+  },
+  {
+    field: "NID",
+    headerName: "NID",
+    width: 120,
+  },
+
+  {
+    field: "Phone",
+    headerName: "Phone",
+    width: 150,
+  },
+  {
+    field: "Reason",
+    headerName: "Reason",
+    width: 150,
+  },
+];

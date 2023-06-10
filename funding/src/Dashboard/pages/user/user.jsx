@@ -61,7 +61,7 @@ const New = ({ inputs, title }) => {
                   <input id={input.id} type={input.type} placeholder={input.placeholder} onChange={handleInput} />
                 </div>
               ))}
-              <button type="submit">Send</button>
+              <button type="submit">Submit</button>
             </form>
           </div>
         </div>

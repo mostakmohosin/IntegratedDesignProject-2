@@ -17,13 +17,11 @@ function login() {
 			<Navbar />
 
 			<div className='loginPage'>
+				<div>
+					<div class="wrapper">
+						<h2>Donation Form</h2>
+						<form action="" method="POST">
 
-
-				<div class="wrapper">
-					<h2>Donation Form</h2>
-					<form action="" method="POST">
-
-						<div class="input-group">
 							<div class="input-box">
 								<input className='textField' type="text" name="fullname" placeholder="Full Name" required />
 								<i class="bx bx-user icon"></i>
@@ -33,25 +31,18 @@ function login() {
 								<i class="bx bx-user icon"></i>
 							</div>
 							<div class="input-box">
-								<input type="email" name="email" placeholder="example@gmail.com" required className='textField' />
-								<i class="bx bx-envelope icon"></i>
+								<input className='textField' type="email" placeholder="example@gmail.com" required
+								/>
+								<i className="icon"><EmailIcon /></i>
 							</div>
-							<h4>Date of Birth</h4>
-							<div class="input-box">
 
-								<input type="date" name="dob" required className='textField' />
-							</div>
-							<h4>Gender:</h4>
 							<div class="input-box">
 								<input type="radio" id="male" name="gender" value="male" checked /><label for="male">Male <MaleIcon /></label>
 								<input type="radio" id="female" name="gender" value="female" /> <label for="female">Female <FemaleIcon /></label>
 							</div>
 
 							<h4>Payment Details</h4>
-							<div class="input-box">
-								<input type="radio" id="male" name="gender" value="male" checked /><label for="c1">Credit Card <MaleIcon /></label>
-								<input type="radio" id="female" name="gender" value="female" /> <label for="c2">Rocket <FemaleIcon /></label>
-							</div>
+
 							<div class="input-box">
 								<input type="tel" name="number" placeholder="Card/Rocket/Bkash Number" required className='textField' /><i class="bx bx-credit-card icon"></i>
 							</div>
@@ -62,18 +53,20 @@ function login() {
 								<input type="number" name="amount" placeholder="Amount" className='textField' /><i class="bx bx-money icon"></i>
 							</div>
 							<div class="input-box">
-								<button type="submit" name="submit">PAY NOW</button>
+								<button className='btnSub' type="submit" name="submit">PAY NOW</button>
 							</div>
 
+
+						</form><br /><br />
+						<div className="social">
+							<InstagramIcon /> <TwitterIcon /> <FacebookIcon />
+
 						</div>
-					</form><br /><br />
-					<div className="social">
-						<InstagramIcon /> <TwitterIcon /> <FacebookIcon />
-
 					</div>
-				</div>
 
+				</div>
 			</div>
+			<Footer />
 		</div>
 
 	)
