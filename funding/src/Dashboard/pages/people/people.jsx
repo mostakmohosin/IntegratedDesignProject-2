@@ -1,39 +1,33 @@
-import "./people.css";
+import "../../styles/add.css";
 import Sidebar from "../../components/sidebar/Sidebar1";
 import Navbar from "../../components/navbar/Navbar1";
 import { useState } from "react";
 import { addDoc, collection, doc, serverTimestamp, setDoc } from "firebase/firestore";
-import { db } from "../../../firebase";
+import { auth, db } from "../../../firebase";
 import { useNavigate } from "react-router-dom";
 
 
-const New2 = ({ inputs, title }) => {
+const New = ({ inputs, title }) => {
   const [data, setData] = useState({})
   const navigate = useNavigate()
 
-  const handleInput = (e) => {
+  const handleInput = (e) =>{
     const id = e.target.id;
     const value = e.target.value;
 
-    setData({ ...data, [id]: value });
+    setData({ ...data, [id]: value});
   };
 
   console.log(data)
 
-  const handleAdd = async (e) => {
+  const handleAdd = async(e) =>{
     e.preventDefault();
-    try {
-
-
-      await setDoc(doc(db, "people"), {
-        ...data,
-        timeStamp: serverTimestamp()
-      });
-      navigate(-1)
-    } catch (err) {
-      console.log(err)
-    }
-
+    await addDoc(collection(db, "people"),{
+      ...data,
+      timeStamp: serverTimestamp()
+    });
+    navigate(-1)
+    
   }
 
   return (
@@ -45,10 +39,10 @@ const New2 = ({ inputs, title }) => {
           <h1>{title}</h1>
         </div>
         <div className="bottom">
-
+          
           <div className="right">
             <form onSubmit={handleAdd}>
-
+              
 
               {inputs.map((input) => (
                 <div className="formInput" key={input.id}>
@@ -56,7 +50,7 @@ const New2 = ({ inputs, title }) => {
                   <input id={input.id} type={input.type} placeholder={input.placeholder} onChange={handleInput} />
                 </div>
               ))}
-              <button type="submit">Submit</button>
+              <button type="submit" className="btnSubmit">Submit</button>
             </form>
           </div>
         </div>
@@ -65,4 +59,4 @@ const New2 = ({ inputs, title }) => {
   );
 };
 
-export default New2;
+export default New;

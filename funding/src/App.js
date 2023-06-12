@@ -36,11 +36,7 @@ function App() {
 
   return (
     <div>
-      <div >
-
-
         <BrowserRouter>
-
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/gallery' element={<Gallery />} />
@@ -52,24 +48,13 @@ function App() {
             <Route path='/payment' element={<Payment />} />
           </Routes>
 
-        </BrowserRouter>
-
-
-
-      </div>
-      <div>
-        <BrowserRouter>
           <Routes>
-
-
-
             <Route path="dashboard" element={<Home1 />} />
 
             <Route path="/users">
               <Route index element={<List />} />
               <Route path=":userId" element={<Single />} />
-              <Route
-                path="new"
+              <Route path="new"
                 element={<New inputs={userInputs} title="Add New User" />}
               />
             </Route>
@@ -77,8 +62,7 @@ function App() {
             <Route path="/donor">
               <Route index element={<List1 />} />
               <Route path=":donorId" element={<Single />} />
-              <Route
-                path="new"
+              <Route path="new"
                 element={<New1 inputs={donorInputs} title="Add New Donor" />}
               />
               </Route>
@@ -86,17 +70,12 @@ function App() {
               <Route path="/people">
                 <Route index element={<List2 />} />
                 <Route path=":peopleId" element={<Single />} />
-                <Route
-                  path="new"
+                <Route path="new"
                   element={<New2 inputs={peopleInputs} title="Add New People" />}
                 />
               </Route>
-
-          
-
           </Routes>
         </BrowserRouter>
-      </div>
     </div>
   );
 }

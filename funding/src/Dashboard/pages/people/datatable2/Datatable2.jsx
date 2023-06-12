@@ -1,4 +1,4 @@
-import "./datatable.css";
+import "./datatable2.css";
 import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
 import { DataGrid } from "@mui/x-data-grid";
 import { userColumns2, userRows } from "../../../datatablesource";
@@ -63,7 +63,7 @@ const Datatable2 = () => {
     },
   ];
   return (
-    <div className="datatable">
+    <div className="datatable2">
       <div className="datatableTitle">
         Add New People
         <Link to="/people/new" className="link">
@@ -76,7 +76,7 @@ const Datatable2 = () => {
         columns={userColumns2.concat(actionColumn)}
         pageSize={9}
         rowsPerPageOptions={[9]}
-        checkboxSelection
+        
       />
     </div>
   );

@@ -3,7 +3,12 @@
   display: flex;
 }
 
-.top,.bottom {
+.newContainer {
+  flex: 6;
+}
+
+.top,
+.bottom {
   -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
   box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
   padding: 10px;
@@ -12,22 +17,8 @@
 }
 
 h1 {
-  color: lightgray;
+  color: rgb(17, 1, 1);
   font-size: 20px;
-}
-
-.left {
-  flex: 1;
-  text-align: center;
-}
-
-
-.newContainer {
-  flex: 6;
-}
-
-.right {
-  flex: 2;
 }
 
 form {
@@ -35,6 +26,7 @@ form {
   flex-wrap: wrap;
   gap: 30px;
   justify-content: space-around;
+  margin: 10px 250px;
 }
 
 .formInput {
@@ -42,7 +34,7 @@ form {
 }
 
 label {
-  display: flex;
+  
   align-items: center;
   gap: 10px;
 }
@@ -58,7 +50,7 @@ input {
   border-bottom: 1px solid gray;
 }
 
-button {
+.btnSubmit {
   width: 150px;
   padding: 10px;
   border: none;

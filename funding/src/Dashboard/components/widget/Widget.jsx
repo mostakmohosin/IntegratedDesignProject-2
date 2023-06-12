@@ -1,25 +1,23 @@
 import "./widget.css";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
-import { useEffect } from "react";
-import { query, collection, where, getDoc } from "firebase/firestore";
+import { useEffect, useState } from "react";
+import { query, collection, where, getDocs } from "firebase/firestore";
 import { db } from "../../../firebase";
 
 const Widget = ({ type }) => {
   let data;
 
-  //temporary
-  const amount = 100;
+  const [amount, setAmount] = useState(null)
 
   switch (type) {
     case "user":
       data = {
         title: "USERS",
-        isMoney: false,
         link: "See all users",
+        query: "users",
         icon: (
           <PersonOutlinedIcon
             className="icon"
@@ -34,8 +32,8 @@ const Widget = ({ type }) => {
     case "donor":
       data = {
         title: "DONORS",
-        isMoney: false,
         link: "View all donors",
+        query: "donor",
         icon: (
           <ShoppingCartOutlinedIcon
             className="icon"
@@ -50,7 +48,7 @@ const Widget = ({ type }) => {
     case "people":
       data = {
         title: "PEOPLES",
-        isMoney: false,
+        query: "people",
         link: "View all peoples",
         icon: (
           <MonetizationOnOutlinedIcon
@@ -65,6 +63,7 @@ const Widget = ({ type }) => {
         title: "BALANCE",
         isMoney: true,
         link: "See details",
+        query: "people",
         icon: (
           <AccountBalanceWalletOutlinedIcon
             className="icon"
@@ -74,11 +73,38 @@ const Widget = ({ type }) => {
             }}
           />
         ),
+        
       };
       break;
     default:
       break;
   }
+
+  useEffect(() => {
+    const fetchData = async() =>{
+    const today =new Date();
+    const lastMonth = new Date(new Date().setMonth(today.getMonth() - 1));
+    const prevMonth = new Date(new Date().setMonth(today.getMonth() - 1));
+
+    const lastMonthQuery = query(
+      collection(db, data.query),
+      where("timeStamp", "<=", today),
+      where("timeStamp", ">", lastMonth)
+  );
+  const prevMonthQuery = query(
+    collection(db, data.query),
+    where("timeStamp", "<=", lastMonth),
+    where("timeStamp", ">", prevMonth)
+);
+const lastMonthData = await getDocs(lastMonthQuery)
+const prevMonthData = await getDocs(prevMonthQuery)
+
+setAmount(lastMonthData.docs.length)
+  };
+  fetchData();
+}, []);
+  
+  
 
 
   return (

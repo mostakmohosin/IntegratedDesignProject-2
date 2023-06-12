@@ -1,4 +1,4 @@
-import "./user.css";
+import "../../styles/add.css";
 import Sidebar from "../../components/sidebar/Sidebar1";
 import Navbar from "../../components/navbar/Navbar1";
 import { useState } from "react";
@@ -61,7 +61,7 @@ const New = ({ inputs, title }) => {
                   <input id={input.id} type={input.type} placeholder={input.placeholder} onChange={handleInput} />
                 </div>
               ))}
-              <button type="submit">Submit</button>
+              <button type="submit" className="btnSubmit">Submit</button>
             </form>
           </div>
         </div>

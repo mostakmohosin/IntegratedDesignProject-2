@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { db } from "../../../../firebase";
 
-const Datatable = () => {
+const Datatable1 = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -40,7 +40,7 @@ const Datatable = () => {
     
   };
 
-  const actionColumn = [
+  const actionColumn1 = [
     {
       field: "action",
       headerName: "Action",
@@ -49,21 +49,19 @@ const Datatable = () => {
         return (
           <div className="cellAction">
             
-              <div className="viewButton">View</div>
+              <div className="viewButton">Edit</div>
         
             <div
               className="deleteButton"
               onClick={() => handleDelete(params.row.id)}
-            >
-              Delete
-            </div>
+            >Delete</div>
           </div>
         );
       },
     },
   ];
   return (
-    <div className="datatable">
+    <div className="datatable1">
       <div className="datatableTitle">
         Add New Donor
         <Link to="/donor/new" className="link">
@@ -73,13 +71,13 @@ const Datatable = () => {
       <DataGrid
         className="datagrid"
         rows={data}
-        columns={userColumns1.concat(actionColumn)}
-        pageSize={9}
-        rowsPerPageOptions={[9]}
-        checkboxSelection
+        columns={userColumns1.concat(actionColumn1)}
+        pageSize={8}
+        rowsPerPageOptions={[8]}
+        
       />
     </div>
   );
 };
 
-export default Datatable;
+export default Datatable1;

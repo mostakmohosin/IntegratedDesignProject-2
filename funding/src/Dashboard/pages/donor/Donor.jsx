@@ -1,4 +1,4 @@
-import "./Donor.css";
+import "../../styles/add.css";
 import Sidebar from "../../components/sidebar/Sidebar1";
 import Navbar from "../../components/navbar/Navbar1";
 import { useState } from "react";
@@ -22,17 +22,11 @@ const New1 = ({ inputs, title }) => {
 
   const handleAdd = async(e) =>{
     e.preventDefault();
-    try{
-
-   
-    await setDoc(doc(db, "donor"),{
+    await addDoc(collection(db, "donor"),{
       ...data,
       timeStamp: serverTimestamp()
     });
     navigate(-1)
-  }catch(err){
-    console.log(err)
-  }
     
   }
 
@@ -48,15 +42,14 @@ const New1 = ({ inputs, title }) => {
           
           <div className="right">
             <form onSubmit={handleAdd}>
-              
-
+            
               {inputs.map((input) => (
-                <div className="formInput" key={input.id}>
+                <div className="formInput1" key={input.id}>
                   <label>{input.label}</label>
                   <input id={input.id} type={input.type} placeholder={input.placeholder} onChange={handleInput} />
                 </div>
               ))}
-              <button type="submit">Submit</button>
+              <button type="submit" className="btnSubmit">Submit</button>
             </form>
           </div>
         </div>

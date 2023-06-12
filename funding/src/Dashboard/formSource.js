@@ -92,7 +92,7 @@ export const userInputs = [
     },
     {
       id: "Address",
-      label: "Address",
+      label: "Present Address",
       type: "text",
       placeholder: "Enter Address",
     },
@@ -106,7 +106,7 @@ export const userInputs = [
       id: "Phone",
       label: "Mobile",
       type: "text",
-      placeholder: "Phone Number",
+      placeholder: "+008016xxxxxxxx",
     },
     {
       id: "Reason",
