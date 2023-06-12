@@ -18,4 +18,4 @@ npm init
 and press enter key. After completion, you will get package.json file.
 now install some dependencies--
 
-npm i express nodemon axios body-parser cors mysql
+npm i express nodemon firebase
