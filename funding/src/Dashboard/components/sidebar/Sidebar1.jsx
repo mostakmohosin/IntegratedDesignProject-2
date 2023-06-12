@@ -47,21 +47,21 @@ const Sidebar = () => {
           </Link>
           
           
+          <Link to="/question" style={{ textDecoration: "none" }}>
           <li>
-            <LocalShippingIcon className="icon" />
+            <CreditCardIcon className="icon" />
             <span>Questions</span>
           </li>
+          </Link>
           
           
-          <p className="title">USER</p>
-          <li>
-            <AccountCircleOutlinedIcon className="icon" />
-            <span>Profile</span>
-          </li>
+          <p className="title">LOGOUT</p>
+          <Link to="/login" style={{ textDecoration: "none" }}>
           <li>
             <ExitToAppIcon className="icon" />
             <span>Logout</span>
           </li>
+          </Link>
         </ul>
       </div>
     </div>

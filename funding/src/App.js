@@ -14,13 +14,14 @@ import Home1 from "./Dashboard/./pages/home/Home1";
 import List from "./Dashboard/./pages/list/List";
 import List1 from "./Dashboard/./pages/list/List1";
 import List2 from "./Dashboard/./pages/list/List2";
-import Single from "./Dashboard/./pages/single/Single";
+import List3 from "./Dashboard/./pages/list/List3";
 import New from "./Dashboard/./pages/user/user";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { userInputs, donorInputs, peopleInputs } from "./Dashboard/./formSource";
 import { AuthContext } from "./Dashboard/./context/AuthContext"
 import New1 from './Dashboard/pages/donor/Donor';
 import New2 from './Dashboard/pages/people/people';
+import AddPeople from './pages/AddPeople';
 
 
 
@@ -46,6 +47,7 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/signup' element={<Signup />} />
             <Route path='/payment' element={<Payment />} />
+            <Route path='/addpeople' element={<AddPeople />} />
           </Routes>
 
           <Routes>
@@ -53,7 +55,6 @@ function App() {
 
             <Route path="/users">
               <Route index element={<List />} />
-              <Route path=":userId" element={<Single />} />
               <Route path="new"
                 element={<New inputs={userInputs} title="Add New User" />}
               />
@@ -61,7 +62,6 @@ function App() {
 
             <Route path="/donor">
               <Route index element={<List1 />} />
-              <Route path=":donorId" element={<Single />} />
               <Route path="new"
                 element={<New1 inputs={donorInputs} title="Add New Donor" />}
               />
@@ -69,10 +69,15 @@ function App() {
 
               <Route path="/people">
                 <Route index element={<List2 />} />
-                <Route path=":peopleId" element={<Single />} />
                 <Route path="new"
                   element={<New2 inputs={peopleInputs} title="Add New People" />}
                 />
+              </Route>
+
+              <Route path="/question">
+                <Route index element={<List3 />} />
+                
+                
               </Route>
           </Routes>
         </BrowserRouter>

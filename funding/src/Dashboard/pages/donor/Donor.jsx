@@ -3,11 +3,11 @@ import Sidebar from "../../components/sidebar/Sidebar1";
 import Navbar from "../../components/navbar/Navbar1";
 import { useState } from "react";
 import { addDoc, collection, doc, serverTimestamp, setDoc } from "firebase/firestore";
-import { db } from "../../../firebase";
+import { auth, db } from "../../../firebase";
 import { useNavigate } from "react-router-dom";
 
 
-const New1 = ({ inputs, title }) => {
+const New = ({ inputs, title }) => {
   const [data, setData] = useState({})
   const navigate = useNavigate()
 
@@ -41,8 +41,9 @@ const New1 = ({ inputs, title }) => {
         <div className="bottom">
           
           <div className="right">
-            <form onSubmit={handleAdd}>
-            
+            <form onSubmit={handleAdd} className="formControl">
+              
+
               {inputs.map((input) => (
                 <div className="formInput1" key={input.id}>
                   <label>{input.label}</label>
@@ -58,4 +59,4 @@ const New1 = ({ inputs, title }) => {
   );
 };
 
-export default New1;
+export default New;

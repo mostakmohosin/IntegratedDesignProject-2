@@ -63,7 +63,7 @@ const Datatable2 = () => {
     },
   ];
   return (
-    <div className="datatable2">
+    <div className="datatable">
       <div className="datatableTitle">
         Add New People
         <Link to="/people/new" className="link">

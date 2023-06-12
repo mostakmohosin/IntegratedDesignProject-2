@@ -1,21 +1,19 @@
-import "./datatable1.css";
+
 import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
 import { DataGrid } from "@mui/x-data-grid";
-import { userColumns1, userRows } from "../../../datatablesource";
+import { userColumns4, userRows } from "../datatablesource";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { db } from "../../../../firebase";
+import { db } from "../../firebase";
 
-const Datatable1 = () => {
+const Question = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       let list = []
       try {
-
-
-        const querySnapshot = await getDocs(collection(db, "donor"));
+        const querySnapshot = await getDocs(collection(db, "question"));
         querySnapshot.forEach((doc) => {
           list.push({id: doc.id, ...doc.data()})
           
@@ -32,7 +30,7 @@ const Datatable1 = () => {
 
   const handleDelete = async(id) => {
     try{
-      await deleteDoc(doc(db, "donor", id));
+      await deleteDoc(doc(db, "users", id));
       setData(data.filter((item) => item.id !== id));
     }catch(err){
       console.log(err)
@@ -40,7 +38,7 @@ const Datatable1 = () => {
     
   };
 
-  const actionColumn1 = [
+  const actionColumn4 = [
     {
       field: "action",
       headerName: "Action",
@@ -50,33 +48,33 @@ const Datatable1 = () => {
           <div className="cellAction">
             
               <div className="viewButton">Edit</div>
-        
+           
             <div
               className="deleteButton"
               onClick={() => handleDelete(params.row.id)}
-            >Delete</div>
+            >
+              Delete
+            </div>
           </div>
         );
       },
     },
   ];
   return (
-    <div className="datatable1">
+    <div className="datatable">
       <div className="datatableTitle">
-        Add New Donor
-        <Link to="/donor/new" className="link">
-          Add New
-        </Link>
+        All Query
       </div>
       <DataGrid
         className="datagrid"
         rows={data}
-        columns={userColumns1.concat(actionColumn1)}
-        pageSize={8}
-        rowsPerPageOptions={[8]}
+        columns={userColumns4.concat(actionColumn4)}
+        pageSize={9}
+        rowsPerPageOptions={[9]}
+
       />
     </div>
   );
 };
 
-export default Datatable1;
+export default Question;

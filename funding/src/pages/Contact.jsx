@@ -25,7 +25,7 @@ function Contact() {
                         <h3>Headquater</h3>
                         <div>
                             <i class="far fa-house get"></i>
-                            <p>CHARITY BANGLADESH, House No 98, Banani Heights, Rd No-5, Dhaka 1213</p>
+                            <p>CHARITY BANGLADESH, House No 98, Green University, Rd No-5, Dhaka 1213</p>
                         </div>
 
                         <h3>Phone</h3>

@@ -6,6 +6,7 @@ import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlin
 import { useEffect, useState } from "react";
 import { query, collection, where, getDocs } from "firebase/firestore";
 import { db } from "../../../firebase";
+import { Link } from "react-router-dom";
 
 const Widget = ({ type }) => {
   let data;
@@ -16,7 +17,10 @@ const Widget = ({ type }) => {
     case "user":
       data = {
         title: "USERS",
-        link: "See all users",
+        link: (<Link to="/users" style={{ textDecoration: "none" }}>
+        <h5>See all users</h5>
+        </Link>
+          ),
         query: "users",
         icon: (
           <PersonOutlinedIcon
@@ -32,7 +36,10 @@ const Widget = ({ type }) => {
     case "donor":
       data = {
         title: "DONORS",
-        link: "View all donors",
+        link: (<Link to="/donor" style={{ textDecoration: "none" }}>
+        <h5>See all donors</h5>
+        </Link>
+          ),
         query: "donor",
         icon: (
           <ShoppingCartOutlinedIcon
@@ -49,7 +56,10 @@ const Widget = ({ type }) => {
       data = {
         title: "PEOPLES",
         query: "people",
-        link: "View all peoples",
+        link: (<Link to="/people" style={{ textDecoration: "none" }}>
+        <h5>See all Peoples</h5>
+        </Link>
+          ),
         icon: (
           <MonetizationOnOutlinedIcon
             className="icon"
@@ -62,8 +72,7 @@ const Widget = ({ type }) => {
       data = {
         title: "BALANCE",
         isMoney: true,
-        link: "See details",
-        query: "people",
+        query: "amount",
         icon: (
           <AccountBalanceWalletOutlinedIcon
             className="icon"

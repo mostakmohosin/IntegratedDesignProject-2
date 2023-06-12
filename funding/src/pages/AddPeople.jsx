@@ -1,13 +1,13 @@
-import "../../styles/add.css";
-import Sidebar from "../../components/sidebar/Sidebar1";
-import Navbar from "../../components/navbar/Navbar1";
+
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import { useState } from "react";
 import { addDoc, collection, doc, serverTimestamp, setDoc } from "firebase/firestore";
-import { auth, db } from "../../../firebase";
+import { db } from "../firebase";
 import { useNavigate } from "react-router-dom";
 
 
-const New = ({ inputs, title }) => {
+const AddPeople = ({ inputs, title }) => {
   const [data, setData] = useState({})
   const navigate = useNavigate()
 
@@ -32,9 +32,8 @@ const New = ({ inputs, title }) => {
 
   return (
     <div className="new">
-      <Sidebar />
+      <Navbar />
       <div className="newContainer">
-        <Navbar />
         <div className="top">
           <h1>{title}</h1>
         </div>
@@ -55,8 +54,9 @@ const New = ({ inputs, title }) => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
 
-export default New;
+export default AddPeople;

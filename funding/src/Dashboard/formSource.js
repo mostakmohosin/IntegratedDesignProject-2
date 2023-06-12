@@ -76,6 +76,13 @@ export const userInputs = [
       placeholder: "Enter Payment Method",
     },
     {
+      id: "cardno",
+      label: "Card/Phone Number",
+      type: "text",
+      placeholder: "Card/Phone Number",
+    },
+    
+    {
       id: "amount",
       label: "Amount",
       type: "text",

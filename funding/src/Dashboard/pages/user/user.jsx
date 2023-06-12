@@ -52,11 +52,11 @@ const New = ({ inputs, title }) => {
         <div className="bottom">
           
           <div className="right">
-            <form onSubmit={handleAdd}>
+            <form onSubmit={handleAdd} className="formControl">
               
 
               {inputs.map((input) => (
-                <div className="formInput" key={input.id}>
+                <div className="formInput1" key={input.id}>
                   <label>{input.label}</label>
                   <input id={input.id} type={input.type} placeholder={input.placeholder} onChange={handleInput} />
                 </div>
