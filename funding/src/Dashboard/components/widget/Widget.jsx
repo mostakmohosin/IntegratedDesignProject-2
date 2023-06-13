@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 
 const Widget = ({ type }) => {
   let data;
+  
 
   const [amount, setAmount] = useState(null)
 
@@ -72,7 +73,7 @@ const Widget = ({ type }) => {
       data = {
         title: "BALANCE",
         isMoney: true,
-        query: "amount",
+        query: "donor",
         icon: (
           <AccountBalanceWalletOutlinedIcon
             className="icon"

@@ -24,6 +24,7 @@ const New = ({ inputs, title }) => {
     e.preventDefault();
     await addDoc(collection(db, "donor"),{
       ...data,
+      status: "Approved",
       timeStamp: serverTimestamp()
     });
     navigate(-1)
@@ -46,7 +47,6 @@ const New = ({ inputs, title }) => {
 
               {inputs.map((input) => (
                 <div className="formInput1" key={input.id}>
-                  <label>{input.label}</label>
                   <input id={input.id} type={input.type} placeholder={input.placeholder} onChange={handleInput} />
                 </div>
               ))}

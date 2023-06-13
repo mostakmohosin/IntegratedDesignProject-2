@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/Contact.css";
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -6,8 +6,33 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { db } from "../firebase";
 
-function Contact() {
+const Contact = () => {
+
+    const [contact, setContact] = useState({name: "", email: "", subject: "",ques: "" })
+
+    const handleChange = (e) => {
+        e.preventDefault();
+        const {name, value} = e.target;
+        setContact((prev) => {
+            return {...prev, [name] : value}
+        })
+    }
+
+    const handleAdd = async(e) =>{
+        e.preventDefault();
+        await addDoc(collection(db, "question"),{
+          name: contact.name,
+          email: contact.email,
+          subject: contact.subject,
+          ques: contact.ques,
+          timeStamp: serverTimestamp()
+        });
+        
+      }
+
     return (
 
         <div>
@@ -43,26 +68,26 @@ function Contact() {
                         <InstagramIcon /> <TwitterIcon /> <FacebookIcon /> <LinkedInIcon />
                     </div>
                 </div>
-                <div class="form">
+                <form class="form" onSubmit={handleAdd}>
                     <h4>Let's Connect</h4>
 
                     <div class="form-row">
-                        <input name="name" placeholder="Enter Full Name..." type="text" />
-                        <input name="email" placeholder="Enter Email..." type="text" />
+                        <input name="name" placeholder="Enter Full Name..." type="text" value={contact.name} onChange={handleChange}/>
+                        <input name="email" placeholder="Enter Email..." type="text" value={contact.email} onChange={handleChange}/>
 
                     </div>
                     <div class="form-col">
-                        <input name="name" placeholder="Enter Subjects" type="text" />
+                        <input name="subject" placeholder="Enter Subjects" type="text" value={contact.subject} onChange={handleChange}/>
                     </div>
                     <div class="form-col">
-                        <textarea name="" id="" cols="30" rows="10" placeholder="How can we Help?"></textarea>
+                        <textarea name="ques" id="" cols="30" rows="10" placeholder="How can we Help?" value={contact.ques} onChange={handleChange}></textarea>
                     </div>
                     <div class="form-col">
                         <button>Send Message</button>
                     </div>
 
 
-                </div>
+                </form>
             </section>
 
             <section id="map">

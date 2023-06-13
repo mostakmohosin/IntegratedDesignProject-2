@@ -1,17 +1,43 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { Link } from 'react-router-dom'
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import EmailIcon from '@mui/icons-material/Email';
 import PasswordIcon from '@mui/icons-material/Password';
-import MaleIcon from '@mui/icons-material/Male';
-import FemaleIcon from '@mui/icons-material/Female';
 import "../styles/Login.css"
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { db } from "../firebase";
 
-function login() {
+const Payment = () =>{
+
+	const [payment, setPayment] = useState({name: "", email: "", gender: "",card: "",cardno: "",amount: "" })
+
+    const handleChange = (e) => {
+        e.preventDefault();
+        const {name, value} = e.target;
+        setPayment((prev) => {
+            return {...prev, [name] : value}
+        })
+    }
+
+    const handleAdd = async(e) =>{
+        e.preventDefault();
+        await addDoc(collection(db, "donor"),{
+          name: payment.name,
+          email: payment.email,
+          gender: payment.gender,
+          card: payment.card,
+		  cardno: payment.cardno,
+		  pin: payment.pin,
+		  amount: payment.amount,
+		  status: "Approved",
+          timeStamp: serverTimestamp()
+        });
+        
+      }
+
 	return (
 		<div>
 			<Navbar />
@@ -20,37 +46,41 @@ function login() {
 				<div>
 					<div class="wrapper">
 						<h2>Donation Form</h2>
-						<form action="" method="POST">
+						<form action="" method="POST" onSubmit={handleAdd}>
 
 							<div class="input-box">
-								<input className='textField' type="text" name="fullname" placeholder="Full Name" required />
+								<input className='textField' type="text" name="name" placeholder="Full Name" required value={payment.name} onChange={handleChange}/>
 								<i class="bx bx-user icon"></i>
 							</div>
+							
 							<div class="input-box">
-								<input type="text" name="nickname" placeholder="Nick Name" required className='textField' />
-								<i class="bx bx-user icon"></i>
-							</div>
-							<div class="input-box">
-								<input className='textField' type="email" placeholder="example@gmail.com" required
-								/>
+								<input className='textField' name='email' type="email" placeholder="example@gmail.com" required
+								value={payment.email} onChange={handleChange}/>
 								<i className="icon"><EmailIcon /></i>
 							</div>
 
 							<div class="input-box">
-								<input type="radio" id="male" name="gender" value="male" checked /><label for="male">Male <MaleIcon /></label>
-								<input type="radio" id="female" name="gender" value="female" /> <label for="female">Female <FemaleIcon /></label>
+								<input type="text" name="gender" placeholder="Enter your Gender" required className='textField' 
+								value={payment.gender} onChange={handleChange}/><i class="bx bx-credit-card icon"></i>
 							</div>
 
 							<h4>Payment Details</h4>
+							<div class="input-box">
+								<input type="text" name="card" placeholder="Payment Method" required className='textField' 
+								value={payment.card} onChange={handleChange}/><i class="bx bx-credit-card icon"></i>
+							</div>
 
 							<div class="input-box">
-								<input type="tel" name="number" placeholder="Card/Rocket/Bkash Number" required className='textField' /><i class="bx bx-credit-card icon"></i>
+								<input type="number" name="cardno" placeholder="Card/Rocket/Bkash/Bank Acc. Number" required className='textField' 
+								value={payment.cardno} onChange={handleChange}/><i class="bx bx-credit-card icon"></i>
 							</div>
 							<div class="input-box">
-								<input type="password" name="pin" placeholder="Card/Rocket/Bkash Pin Number" required className='textField' /><i className="icon"><PasswordIcon /></i>
+								<input type="password" name="pin" placeholder="Card/Rocket/Bkash Pin Number" required className='textField' 
+								value={payment.pin} onChange={handleChange}/><i className="icon"><PasswordIcon /></i>
 							</div>
 							<div class="input-box">
-								<input type="number" name="amount" placeholder="Amount" className='textField' /><i class="bx bx-money icon"></i>
+								<input type="number" name="amount" placeholder="Amount" className='textField' 
+								value={payment.amount} onChange={handleChange}/><i class="bx bx-money icon"></i>
 							</div>
 							<div class="input-box">
 								<button className='btnSub' type="submit" name="submit">PAY NOW</button>
@@ -72,4 +102,4 @@ function login() {
 	)
 }
 
-export default login
+export default Payment

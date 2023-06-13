@@ -2,8 +2,8 @@ import "../../styles/add.css";
 import Sidebar from "../../components/sidebar/Sidebar1";
 import Navbar from "../../components/navbar/Navbar1";
 import { useState } from "react";
-import { addDoc, collection, doc, serverTimestamp, setDoc } from "firebase/firestore";
-import { auth, db } from "../../../firebase";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { db } from "../../../firebase";
 import { useNavigate } from "react-router-dom";
 
 
@@ -46,7 +46,6 @@ const New = ({ inputs, title }) => {
 
               {inputs.map((input) => (
                 <div className="formInput1" key={input.id}>
-                  <label>{input.label}</label>
                   <input id={input.id} type={input.type} placeholder={input.placeholder} onChange={handleInput} />
                 </div>
               ))}

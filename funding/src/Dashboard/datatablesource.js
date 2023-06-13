@@ -66,28 +66,33 @@ export const userColumns2 = [
   { field: "id", headerName: "ID", width: 100 },
  
   {
-    field: "Name",
+    field: "name",
     headerName: "Name",
-    width: 150,
+    width: 200,
   },
   {
-    field: "Address",
+    field: "gender",
+    headerName: "Gender",
+    width: 80,
+  },
+  {
+    field: "nid",
+    headerName: "NID",
+    width: 120,
+  },
+
+  {
+    field: "phone",
+    headerName: "Phone",
+    width: 120,
+  },
+  {
+    field: "address",
     headerName: "Address",
     width: 200,
   },
   {
-    field: "NID",
-    headerName: "NID",
-    width: 150,
-  },
-
-  {
-    field: "Phone",
-    headerName: "Phone",
-    width: 200,
-  },
-  {
-    field: "Reason",
+    field: "reason",
     headerName: "Reason",
     width: 200,
   },
@@ -110,7 +115,7 @@ export const userColumns3 = [
   {
     field: "card",
     headerName: "Payment Method",
-    width: 150,
+    width: 200,
   },
   {
     field: "amount",

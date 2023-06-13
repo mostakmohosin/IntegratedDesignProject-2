@@ -1,123 +1,114 @@
 export const userInputs = [
   {
     id: "displayName",
-    label: "Name and surname",
     type: "text",
-    placeholder: "Enter your Name",
+    placeholder: "Enter FullName",
   },
     {
       id: "username",
-      label: "Username",
       type: "text",
-      placeholder: "usename",
+      placeholder: "Enter Unique Username",
     },
     
     {
       id: "email",
-      label: "Email",
       type: "mail",
       placeholder: "example@gmail.com",
     },
     {
       id: "phone",
-      label: "Phone",
       type: "text",
-      placeholder: "+88016-23456789",
+      placeholder: "+88016-xxxxxxxx",
     },
     {
       id: "gender",
-      label: "Gender",
       type: "text",
       placeholder: "Enter your gender",
     },
     {
       id: "password",
-      label: "Password",
       type: "password",
       placeholder: "Enter your Password",
     },
     {
       id: "address",
-      label: "Address",
       type: "text",
-      placeholder: "Enter Address",
+      placeholder: "Enter Present Address",
     },
     {
       id: "country",
-      label: "Country",
       type: "text",
-      placeholder: "Bangladesh",
+      placeholder: "Nationality",
     },
   ];
   
   export const donorInputs = [
     {
       id: "name",
-      label: "Name",
       type: "text",
       placeholder: "Enter Name",
     },
     {
       id: "email",
-      label: "Email",
       type: "text",
       placeholder: "Enter Email Address",
     },
     {
       id: "gender",
-      label: "Gender",
       type: "text",
       placeholder: "Enter your gender",
     },
     {
       id: "card",
-      label: "Payment Method",
       type: "text",
       placeholder: "Enter Payment Method",
     },
     {
       id: "cardno",
-      label: "Card/Phone Number",
       type: "text",
       placeholder: "Card/Phone Number",
     },
     
     {
       id: "amount",
-      label: "Amount",
       type: "text",
       placeholder: "Enter Amount",
+    },
+    {
+      id: "pin",
+      type: "password",
+      placeholder: "Enter PIN Number",
     }
   ];
 
   export const peopleInputs = [
     {
-      id: "Name",
-      label: "Name",
+      id: "name",
       type: "text",
       placeholder: "Enter FullName",
     },
     {
-      id: "Address",
-      label: "Present Address",
+      id: "gender",
       type: "text",
-      placeholder: "Enter Address",
+      placeholder: "Enter your Gender",
     },
     {
-      id: "NID",
-      label: "NID",
+      id: "nid",
       type: "text",
       placeholder: "Nation ID No.",
     },
     {
-      id: "Phone",
-      label: "Mobile",
+      id: "phone",
       type: "text",
       placeholder: "+008016xxxxxxxx",
     },
     {
-      id: "Reason",
-      label: "Reason",
+      id: "address",
+      type: "text",
+      placeholder: "Enter Address",
+    },
+    {
+      id: "reason",
       type: "text",
       placeholder: "What's the reason?",
     },

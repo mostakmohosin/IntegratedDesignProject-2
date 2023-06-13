@@ -1,8 +1,8 @@
 import "./table.css";
 
-import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { DataGrid } from "@mui/x-data-grid";
-import { userColumns3, userRows } from "../../datatablesource";
+import { userColumns3 } from "../../datatablesource";
 import { useEffect, useState } from "react";
 import { db } from "../../../firebase";
 

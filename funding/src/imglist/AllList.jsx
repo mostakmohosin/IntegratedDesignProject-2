@@ -1,39 +1,39 @@
-import Pepperoni from "../assets/img/cover2.jpg";
-import Margherita from "../assets/img/cover2.jpg";
-import PedroTechSpecial from "../assets/img/cover2.jpg";
-import Vegan from "../assets/img/cover2.jpg";
-import Pineapple from "../assets/img/cover2.jpg";
-import Expensive from "../assets/img/cover2.jpg";
+import Pepperoni from "../assets/img/p7.jpg";
+import Margherita from "../assets/img/p8.jpg";
+import PedroTechSpecial from "../assets/img/p3.jpg";
+import Vegan from "../assets/img/p4.jpg";
+import Pineapple from "../assets/img/p5.jpg";
+import Expensive from "../assets/img/p6.jpg";
 
 export const AllList = [
   {
-    name: "Poor",
+    name: "Jhal Muriwala Seller",
     image: Pepperoni,
-    price: 10,
+    price: 100,
   },
   {
-    name: "Poor",
+    name: "The bread Seller",
     image: Margherita,
-    price: 10,
+    price: 50,
   },
   {
-    name: "Poor",
+    name: "Tea Seller",
     image: PedroTechSpecial,
-    price: 10,
+    price: 120,
   },
   {
-    name: "Poor",
+    name: "The Tailor",
     image: Vegan,
-    price: 10,
+    price: 150,
   },
   {
-    name: "Poor",
+    name: "Grocery store",
     image: Pineapple,
-    price: 10,
+    price: 500,
   },
   {
-    name: "Poor",
+    name: "Grocery store",
     image: Expensive,
-    price: 10,
+    price: 500,
   },
 ];
