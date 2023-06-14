@@ -8,10 +8,12 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase";
+import { useNavigate } from "react-router-dom";
 
 const Contact = () => {
 
     const [contact, setContact] = useState({name: "", email: "", subject: "",ques: "" })
+    const navigate = useNavigate()
 
     const handleChange = (e) => {
         e.preventDefault();
@@ -30,7 +32,7 @@ const Contact = () => {
           ques: contact.ques,
           timeStamp: serverTimestamp()
         });
-        
+        navigate(-1)
       }
 
     return (

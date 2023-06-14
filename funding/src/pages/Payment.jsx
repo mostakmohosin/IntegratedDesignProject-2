@@ -9,10 +9,12 @@ import PasswordIcon from '@mui/icons-material/Password';
 import "../styles/Login.css"
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase";
+import { useNavigate } from 'react-router-dom';
 
 const Payment = () =>{
 
 	const [payment, setPayment] = useState({name: "", email: "", gender: "",card: "",cardno: "",amount: "" })
+	const navigate = useNavigate()
 
     const handleChange = (e) => {
         e.preventDefault();
@@ -35,7 +37,7 @@ const Payment = () =>{
 		  status: "Approved",
           timeStamp: serverTimestamp()
         });
-        
+        navigate(-1)
       }
 
 	return (
