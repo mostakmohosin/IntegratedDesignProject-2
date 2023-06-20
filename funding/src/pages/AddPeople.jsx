@@ -5,10 +5,12 @@ import { Link, useNavigate } from 'react-router-dom'
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
-import EmailIcon from '@mui/icons-material/Email';
-import PasswordIcon from '@mui/icons-material/Password';
-import MaleIcon from '@mui/icons-material/Male';
-import FemaleIcon from '@mui/icons-material/Female';
+import CreditCardIcon from '@mui/icons-material/CreditCard';
+import PersonIcon from '@mui/icons-material/Person';
+import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk';
+import ContactMailIcon from '@mui/icons-material/ContactMail';
+import QuestionAnswerIcon from '@mui/icons-material/QuestionAnswer';
+import WcIcon from '@mui/icons-material/Wc';
 import "../styles/Login.css"
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase";
@@ -53,28 +55,28 @@ const People = () => {
 
               <div class="input-box">
                 <input className='textField' type="text" name="name" placeholder="Full Name" required value={people.name} onChange={handleChange} />
-                <i class="bx bx-user icon"></i>
+                <i className="icon"><PersonIcon /></i>
               </div>
 
               <div class="input-box">
                 <input type="text" name="gender" placeholder="Enter your Gender" required className='textField'
-                  value={people.gender} onChange={handleChange} /><i class="bx bx-credit-card icon"></i>
+                  value={people.gender} onChange={handleChange} /><i className="icon"><WcIcon /></i>
               </div>
 
               <div class="input-box">
                 <input type="number" name="nid" placeholder="National ID Card Number" required className='textField'
-                  value={people.nid} onChange={handleChange} /><i class="bx bx-credit-card icon"></i>
+                  value={people.nid} onChange={handleChange} /><i className="icon"><CreditCardIcon /></i>
               </div>
 
               <div class="input-box">
                 <input type="number" name="phone" placeholder="Active Contact Number" required className='textField'
-                  value={people.phone} onChange={handleChange} /><i class="bx bx-credit-card icon"></i>
+                  value={people.phone} onChange={handleChange} /><i className="icon"><PhoneInTalkIcon /></i>
               </div>
               <div class="input-box">
-                <textarea name="address" id="" cols="30" rows="5" className='textField' placeholder="Enter Your Present Address" value={people.address} onChange={handleChange}></textarea>
+                <textarea name="address" id="" cols="30" rows="5" className='textField' placeholder="Enter Your Present Address" value={people.address} onChange={handleChange}></textarea><i className="icon"><ContactMailIcon /></i>
               </div>
               <div class="input-box">
-                <textarea name="reason" id="" cols="30" rows="5" className='textField' placeholder="Why you need Help from Us. Describe Shortly" value={people.reason} onChange={handleChange}></textarea>
+                <textarea name="reason" id="" cols="30" rows="5" className='textField' placeholder="Why you need Help from Us. Describe Shortly" value={people.reason} onChange={handleChange}></textarea><i className="icon"><QuestionAnswerIcon /></i>
               </div>
               <div class="input-box">
                 <button className='btnSub' type="submit" name="submit">PAY NOW</button>

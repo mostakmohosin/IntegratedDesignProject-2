@@ -5,7 +5,12 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import EmailIcon from '@mui/icons-material/Email';
-import PasswordIcon from '@mui/icons-material/Password';
+import KeyboardIcon from '@mui/icons-material/Keyboard';
+import AddCardIcon from '@mui/icons-material/AddCard';
+import PersonIcon from '@mui/icons-material/Person';
+import WcIcon from '@mui/icons-material/Wc';
+import DialpadIcon from '@mui/icons-material/Dialpad';
+import PaidIcon from '@mui/icons-material/Paid';
 import "../styles/Login.css"
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase";
@@ -52,7 +57,7 @@ const Payment = () =>{
 
 							<div class="input-box">
 								<input className='textField' type="text" name="name" placeholder="Full Name" required value={payment.name} onChange={handleChange}/>
-								<i class="bx bx-user icon"></i>
+								<i className="icon"><PersonIcon /></i>
 							</div>
 							
 							<div class="input-box">
@@ -63,26 +68,26 @@ const Payment = () =>{
 
 							<div class="input-box">
 								<input type="text" name="gender" placeholder="Enter your Gender" required className='textField' 
-								value={payment.gender} onChange={handleChange}/><i class="bx bx-credit-card icon"></i>
+								value={payment.gender} onChange={handleChange}/><i className="icon"><WcIcon /></i>
 							</div>
 
 							<h4>Payment Details</h4>
 							<div class="input-box">
 								<input type="text" name="card" placeholder="Payment Method" required className='textField' 
-								value={payment.card} onChange={handleChange}/><i class="bx bx-credit-card icon"></i>
+								value={payment.card} onChange={handleChange}/><i className="icon"><AddCardIcon /></i>
 							</div>
 
 							<div class="input-box">
 								<input type="number" name="cardno" placeholder="Card/Rocket/Bkash/Bank Acc. Number" required className='textField' 
-								value={payment.cardno} onChange={handleChange}/><i class="bx bx-credit-card icon"></i>
+								value={payment.cardno} onChange={handleChange}/><i className="icon"><DialpadIcon /></i>
 							</div>
 							<div class="input-box">
 								<input type="password" name="pin" placeholder="Card/Rocket/Bkash Pin Number" required className='textField' 
-								value={payment.pin} onChange={handleChange}/><i className="icon"><PasswordIcon /></i>
+								value={payment.pin} onChange={handleChange}/><i className="icon"><KeyboardIcon /></i>
 							</div>
 							<div class="input-box">
 								<input type="number" name="amount" placeholder="Amount" className='textField' 
-								value={payment.amount} onChange={handleChange}/><i class="bx bx-money icon"></i>
+								value={payment.amount} onChange={handleChange}/><i className="icon"><PaidIcon /></i>
 							</div>
 							<div class="input-box">
 								<button className='btnSub' type="submit" name="submit">PAY NOW</button>
