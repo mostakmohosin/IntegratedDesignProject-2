@@ -1,8 +1,8 @@
 import "./widget.css";
-import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
+import PersonIcon from '@mui/icons-material/Person';
 import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
+import PeopleIcon from '@mui/icons-material/People';
+import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 import { useEffect, useState } from "react";
 import { query, collection, where, getDocs } from "firebase/firestore";
 import { db } from "../../../firebase";
@@ -24,7 +24,7 @@ const Widget = ({ type }) => {
           ),
         query: "users",
         icon: (
-          <PersonOutlinedIcon
+          <PersonIcon
             className="icon"
             style={{
               color: "crimson",
@@ -43,7 +43,7 @@ const Widget = ({ type }) => {
           ),
         query: "donor",
         icon: (
-          <ShoppingCartOutlinedIcon
+          <VolunteerActivismIcon
             className="icon"
             style={{
               backgroundColor: "rgba(218, 165, 32, 0.2)",
@@ -62,7 +62,7 @@ const Widget = ({ type }) => {
         </Link>
           ),
         icon: (
-          <MonetizationOnOutlinedIcon
+          <PeopleIcon
             className="icon"
             style={{ backgroundColor: "rgba(0, 128, 0, 0.2)", color: "green" }}
           />
@@ -94,20 +94,15 @@ const Widget = ({ type }) => {
     const fetchData = async() =>{
     const today =new Date();
     const lastMonth = new Date(new Date().setMonth(today.getMonth() - 1));
-    const prevMonth = new Date(new Date().setMonth(today.getMonth() - 1));
+    
 
     const lastMonthQuery = query(
       collection(db, data.query),
       where("timeStamp", "<=", today),
       where("timeStamp", ">", lastMonth)
   );
-  const prevMonthQuery = query(
-    collection(db, data.query),
-    where("timeStamp", "<=", lastMonth),
-    where("timeStamp", ">", prevMonth)
-);
+  
 const lastMonthData = await getDocs(lastMonthQuery)
-const prevMonthData = await getDocs(prevMonthQuery)
 
 setAmount(lastMonthData.docs.length)
   };

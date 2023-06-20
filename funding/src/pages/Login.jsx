@@ -2,12 +2,12 @@ import "../styles/Login.css"
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import React, { useContext, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import EmailIcon from '@mui/icons-material/Email';
-import PasswordIcon from '@mui/icons-material/Password';
+import KeyboardIcon from '@mui/icons-material/Keyboard';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 import { AuthContext } from "../Dashboard/context/AuthContext"
@@ -61,7 +61,7 @@ const Login = () => {
                 <div class="input-box">
                   <input className='textField' type="password" placeholder="Enter Your Password" required
                     onChange={e => setPassword(e.target.value)} />
-                  <i className="icon"><PasswordIcon /></i>
+                  <i className="icon"><KeyboardIcon /></i>
                 </div>
                 {error && <span>Wrong email and password!</span>}
 

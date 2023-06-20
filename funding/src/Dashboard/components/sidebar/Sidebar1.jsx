@@ -1,11 +1,10 @@
 import "./sidebar.css";
 import DashboardIcon from "@mui/icons-material/Dashboard";
-import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
-import LocalShippingIcon from "@mui/icons-material/LocalShipping";
-import CreditCardIcon from "@mui/icons-material/CreditCard";
-import StoreIcon from "@mui/icons-material/Store";
+import PersonIcon from '@mui/icons-material/Person';
+import PeopleIcon from '@mui/icons-material/People';
+import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
-import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+import HelpCenterIcon from '@mui/icons-material/HelpCenter';
 import { Link } from "react-router-dom";
 
 
@@ -29,19 +28,19 @@ const Sidebar = () => {
           <p className="title">LISTS</p>
           <Link to="/users" style={{ textDecoration: "none" }}>
             <li>
-              <PersonOutlineIcon className="icon" />
+              <PersonIcon className="icon" />
               <span>Users</span>
             </li>
           </Link>
           <Link to="/donor" style={{ textDecoration: "none" }}>
           <li>
-            <CreditCardIcon className="icon" />
+            <VolunteerActivismIcon className="icon" />
             <span>Donors</span>
           </li>
           </Link>
           <Link to="/people" style={{ textDecoration: "none" }}>
           <li>
-            <CreditCardIcon className="icon" />
+            <PeopleIcon className="icon" />
             <span>Peoples</span>
           </li>
           </Link>
@@ -49,7 +48,7 @@ const Sidebar = () => {
           
           <Link to="/question" style={{ textDecoration: "none" }}>
           <li>
-            <CreditCardIcon className="icon" />
+            <HelpCenterIcon className="icon" />
             <span>Questions</span>
           </li>
           </Link>
